@@ -13,3 +13,20 @@ jobs:
         uses: madeiramadeirabr/action-generate-release@1.0.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  changelog:
+    runs-on: ubuntu-latest
+    name: 'Changelog'
+    needs: release
+    steps:
+      - name: Changelog
+        id: changelog
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: update package.json
+        uses: madeiramadeirabr/action-generate-changelog@production
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
