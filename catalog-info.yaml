@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: action-get-last-tag
+  description: Esta action procura a versão mais recente lançada e verifica se ela atende a certos padrões.
+  annotations:
+    github.com/project-slug: madeiramadeirabr/action-get-last-tag
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - python
+    - javascript
+    - shell
+spec:
+  type: library
+  lifecycle: production
+  owner: team-platform-engineering-admin
